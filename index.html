@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Vanillas Calculator</h1>
+        </div>
+        <div class="figure">
+            <div class="box">
+                <h2>Price</h2>
+                <input type="number" name="Price" placeholder="Enter amount" id="amount" style="width: 90%; height: 30%;">
+            </div>
+            <div class="box1">
+                <h3>Quantity</h3>
+                <input type="number" name="Quantity" placeholder="Enter Quantity" id="quantity"  style="width: 90%; height: 30%;">
+            </div>
+            <div class="total">
+                <input type="number" name="Price" placeholder="total" id="total">
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const priceInput = document.getElementById("amount");
+    const quantityInput = document.getElementById("quantity");
+    const resultDisplay = document.getElementById("total");
+    function calculateTotal() {
+        const price = parseFloat(priceInput.value);
+        const quantity = parseFloat(quantityInput.value);
+        if (isNaN(price) || isNaN(quantity)) { // determines whether a value is NaN, first converting the value to a number if necessary. //
+            resultDisplay.value = "Invalid input";
+        } else {
+            const total = price * quantity;
+            resultDisplay.value = total.toFixed(2);
+        }
+    }
+    priceInput.addEventListener("change", calculateTotal);
+    quantityInput.addEventListener("change", calculateTotal);
+</script>
+
+</html>
