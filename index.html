@@ -40,7 +40,7 @@
             resultDisplay.value = "Invalid input";
         } else {
             const total = price * quantity;
-            resultDisplay.value = total.toFixed(2);
+            resultDisplay.value = total.toFixed(1);
         }
     }
     priceInput.addEventListener("change", calculateTotal);
